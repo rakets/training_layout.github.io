@@ -1,0 +1,166 @@
+/*подключаем шрифт через ссылку с googlefontsapi 'Использовать отображение шрифта',изменяя название с робото на наш щрифт */
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+body {
+    /*в строке 6 подключаем шрифт интер и запасной шрифт сериф*/
+    font-family: Inter, serif;
+    /*дабавим градием в фон бади*/
+    background: linear-gradient(325deg, #EA8909 0%, #151111 100%);
+}
+
+.navbar-nav .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items:center;    
+    color:rgb(224, 226, 226);             
+}
+
+
+.navbar-nav .nav-link.active {
+    color:aquamarine;
+}
+.button-help{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-help button{
+    display: flex;
+    margin:50px 50% 0px 50% ;
+    width: 100%;
+    color:#151111;
+    border-style:none;
+    box-shadow: 5px 5px 10px 1px #000;
+    background: linear-gradient(325deg, #EA8909 0%, #151111 100%);
+
+}
+
+.help {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items:center;
+    color:#fff9f9;
+}
+
+.help-anim {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color:#fff9f9;
+    /*добавляем анимацию с webcode.tools и снизу тоже*/
+    animation: myAnim 3s ease 0s infinite alternate forwards;
+}
+
+    /*добавляем анимацию с webcode*/
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(-6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(-2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(1.2deg);
+	}
+}
+
+.navbar-brand img {
+    width: 55px;
+}
+
+.navbar-toggler {
+    background-color:rgb(224, 226, 226); ;
+}
+
+.card {
+    color:#000;
+    box-shadow: 5px 5px 10px 1px #000;
+}
+
+.card a {
+    text-decoration: none;
+    color:#000;
+}
+
+.right-bar {
+    background: linear-gradient(216deg, #893737 0%, #AD9222 100%);
+    box-shadow: 5px 5px 10px 1px #000;
+    border-radius: 5px;
+    color:rgb(7, 7, 7);      
+           
+}
+
+/*можно вместо class="w-100" в html строка 50 и т.д,написать css следующее,что бы img было на половину карусели*/
+/* .carousel-item img {
+    width: 100%;
+} */
+
+
+/*добавляем в html (строка 64 и т.д) класс .text-slide и общараемся к классу в css
+  для настройки цвета текста и расположения по центу слайда  */
+.text-slide {
+    color:#000;
+    /*так можно записать для центровки по x и y */
+    margin: auto auto;
+}
+
+/*убираем кнопки перемотки карусели при экране мобильном,т.к пересекают текст
+1)можно просто удалить эти кнопки с контейнером с html
+2)а можно добавить медиа запрос,что бы они исчезали,когда экран размера моб.телефона
+смотри ниже*/
+@media (max-width: 755px) {
+    .carousel-indicators {
+        display: none;
+    }
+}
+
+footer{
+    margin-top: 15px;
+    background: linear-gradient(216deg, #893737 0%, #AD9222 100%);
+    color:#fff9f9;
+    box-shadow: 5px 5px 10px 1px #000;
+}
+
+.inform1{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+/* что бы отцентровать иконки тг и инст 
+т.к див-блочный,используем флекс и встроенны в него св-ва
+justify-content: center - отцентрует по Х
+align-items: center - отцентрует по у */
+.footer-bar-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* настроим размер иконок и сами иконки обратившись через класс и атрибу */
+.footer-bar-links img,
+.nav-link img,
+.help-anim img {
+    width: 50px;
+    margin: 5px;
+    border-style: #fff9f9;
+    border-width: 0.5px;
+    border-radius: 25px;
+}
